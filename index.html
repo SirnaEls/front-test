@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>Température de Préparation</title>
   </head>
@@ -39,5 +40,52 @@
         />
       </svg>
     </div>
+    <div class="container">
+      <h2>Ajouter un relevé de Température</h2>
+      <div class="container-bloc">
+        <div class="controled-product">
+          <h2>Produit controlé</h2>
+          <input
+            id="productInput"
+            class="input-product"
+            type="text"
+            placeholder="Veuillez saisir un nom de Produit"
+          />
+        </div>
+        <div class="heart-temperature">
+          <h2>Température à coeur</h2>
+          <div class="card-value">
+            <button type="button" id="button-plus" disabled>+</button>
+            <p>75%</p>
+            <button type="button" id="button-moins" disabled>-</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <button
+        type="button"
+        id="validateButton"
+        class="validated-button"
+        disabled=""
+      >
+        Je valide
+      </button>
+    </div>
+    <script>
+      $(document).ready(function () {
+        var $productInput = $("#productInput");
+
+        var $validateButton = $("#validateButton");
+
+        $productInput.on("input", function () {
+          if ($(this).val().trim() !== "") {
+            $validateButton.prop("disabled", false);
+          } else {
+            $validateButton.prop("disabled", true);
+          }
+        });
+      });
+    </script>
   </body>
 </html>
