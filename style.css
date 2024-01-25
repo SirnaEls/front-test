@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  background-color: #47baf8;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.navbar-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar svg {
+  width: 40px;
+  height: 40px;
+  fill: white;
+}
